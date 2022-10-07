@@ -1,7 +1,7 @@
 public class Human {
-    private String birthday;
-    private String fullName;
-    private String city;
+    private final String birthday;
+    private final String fullName;
+    private final String city;
 
     public Human(String birthday, String fullName, String city) {
         this.birthday = birthday;
