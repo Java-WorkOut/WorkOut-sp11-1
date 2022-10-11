@@ -5,15 +5,16 @@ public class Main {
     }
 
     private static void task_1_1() {
-        Human human1 = new Human("1987", "Максим", "Минск", "Брэнд-менеджер");
-        Human human2 = new Human("1993", "Аня", "Москва", "Методист образовательных программ");
-        Human human3 = new Human("1994", "Катя", "Калининград", "Продакт-менеджер");
-        Human human4 = new Human("1995", "Артем", "Москва", "Директор по развитию бизнеса");
-
+        Human human1 = new Human(1987, "Максим", "Минск", "Брэнд-менеджер");
         human1.printMessage();
+        Human human2 = new Human(1993, "Аня", "Москва", "Методист образовательных программ");
         human2.printMessage();
+        Human human3 = new Human(1994, "Катя", "Калининград", "Продакт-менеджер");
         human3.printMessage();
+        Human human4 = new Human(1995, "Артем", "Москва", "Директор по развитию бизнеса");
         human4.printMessage();
+        Human human5 = new Human(-2342,null,null,null);
+        human5.printMessage();
     }
 
     private static void task_1_3() {
