@@ -1,66 +1,40 @@
 public class Human {
-    private final int birthday;
+    private Integer yearOfBirth;
     private final String fullName;
-    private final String city;
+    private String town;
     private String jobTitle;
 
-    public Human(int birthday, String fullName, String city, String jobTitle) {
-        this.birthday = (birthday < 0) ? 0 : birthday;
-        this.fullName = fullName;
-        this.city = city;
-        this.jobTitle = jobTitle;
+    public Human(Integer yearOfBirth, String fullName, String town, String jobTitle) {
+        setYearOfBirth(yearOfBirth);
+        this.fullName = (fullName == null || fullName.equals("")) ? "Информация не указана" : fullName;
+        this.setTown(town);
+        this.jobTitle = (jobTitle == null || jobTitle.equals("")) ? "Информация не указана" : jobTitle;
     }
 
-    public Human(int birthday, String fullName, String city) {
-        this(birthday, fullName, city, null);
+    public int getYearOfBirth() {
+        return yearOfBirth;
     }
 
-    public Human(int birthday, String fullName) {
-        this(birthday, fullName, null, null);
+    public void setYearOfBirth(Integer yearOfBirth) {
+        this.yearOfBirth = (yearOfBirth == null || yearOfBirth < 0) ? 0 : yearOfBirth;
     }
 
-    public Human(int birthday) {
-        this(birthday, null, null, null);
+    public String getTown() {
+        return town;
     }
 
-    public Human(String fullName, String city, String jobTitle) {
-        this(0, fullName, city, jobTitle);
-    }
+    public void setTown(String town) {
+        this.town = (town == null || town.equals("")) ? "Информация не указана" : town;
 
-    public Human(String fullName, String city) {
-        this(0, fullName, city, null);
     }
-
-    public Human(String fullName) {
-        this(0, fullName, null, null);
-    }
-
 
     public void printMessage() {
-        String fullNameMessage = (fullName == null) ? "Информация не указана" : "Меня зовут " + fullName;
-        String cityMessage = (city == null) ? "Информация не указана" : "Я из города " + city;
-        String jobTitleMessage = (jobTitle == null) ? "Информация не указана" : "Я работаю на должности " + jobTitle;
-        String birthdayMessage = (birthday == 0) ? "Информация не указана" : "Я родился в " + birthday + " году";
-        System.out.printf("Привет! %s. %s. %s. %s. Будем знакомы!\n", fullNameMessage, cityMessage, jobTitleMessage, birthdayMessage);
+        System.out.printf("Привет! " +
+                "Меня зовут %s. " +
+                "Я из города %s. " +
+                "Я работаю на должности %s. " +
+                "Я родился в %s году. " +
+                "Будем знакомы!\n", fullName, town, jobTitle, yearOfBirth);
     }
 
-    public String getJobTitle() {
-        return jobTitle;
-    }
-
-    public void setJobTitle(String jobTitle) {
-        this.jobTitle = jobTitle;
-    }
-
-    public int getBirthday() {
-        return birthday;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public String getCity() {
-        return city;
-    }
 }

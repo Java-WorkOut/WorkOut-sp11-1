@@ -1,7 +1,9 @@
 public class Main {
     public static void main(String[] args) {
         task_1_1();
+        System.out.println();
         task_1_3();
+        System.out.println();
     }
 
     private static void task_1_1() {
@@ -15,6 +17,8 @@ public class Main {
         human4.printMessage();
         Human human5 = new Human(-2342,null,null,null);
         human5.printMessage();
+        Human human6 = new Human(2001,"Владимир","Казань","");
+        human6.printMessage();
     }
 
     private static void task_1_3() {
